@@ -1,5 +1,3 @@
-#![feature(slice_patterns)]
-
 #[cfg(test)]
 extern crate byteorder;
 #[macro_use]
@@ -34,8 +32,11 @@ impl Stl {
     pub fn parse(bytes: &[u8]) -> Result<Stl> {
         use nom::IResult::*;
         match parser::parse(bytes) {
-            Done(&[], stl) => Ok(stl),
-            Done(..) => Err(ErrorKind::TooLong.into()),
+            Done(r, stl) => if r.len() == 0 {
+                Ok(stl)
+            } else {
+                Err(ErrorKind::TooLong.into())
+            },
             Incomplete(..) => Err(ErrorKind::TooShort.into()),
             Error(err) => Err(ErrorKind::Nom(err).into()),
         }

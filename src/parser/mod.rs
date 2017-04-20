@@ -9,7 +9,7 @@ named!(pub parse(&[u8]) -> Stl, do_parse!(
     facet_count: le_u32 >>
     triangles: count!(triangle, facet_count as usize) >>
     eof!() >>
-    (Stl { triangles })
+    (Stl { triangles: triangles })
 ));
 
 named!(triangle(&[u8]) -> Triangle, do_parse!(

@@ -1,7 +1,13 @@
 [package]
 authors = ["Nathaniel Ringo <remexre@gmail.com>"]
-name = "stl-parser"
-version = "0.1.0"
+categories = ["parser-implementations"]
+description = "A simple parser for the STL binary format."
+documentation = "https://docs.rs/stl-bin-parser"
+keywords = ["stl", "parser"]
+license = "MIT"
+name = "stl-bin-parser"
+repository = "https://github.com/acmumn/stl-bin-parser"
+version = "0.0.0"
 
 [dependencies]
 error-chain = "0.10.0"

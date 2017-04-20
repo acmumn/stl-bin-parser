@@ -1,10 +1,10 @@
-extern crate stl_parser;
+extern crate stl_bin_parser;
 
 use std::env::args;
 use std::fs::File;
 use std::io::{Read, stderr, Write};
 use std::process::exit;
-use stl_parser::Stl;
+use stl_bin_parser::Stl;
 
 fn main() {
     let args = args().collect::<Vec<String>>();

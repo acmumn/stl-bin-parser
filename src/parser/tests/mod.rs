@@ -28,24 +28,26 @@ fn parse_stl() {
         f32 { 43.44, 45.46, 47.48 }
         u16 { 0 }
     };
-    assert_eq!(parse(&bytes), Done(&[] as &[u8], Stl(vec![
-        Triangle {
-            norm: Vertex(1.2, 3.4, 5.6),
-            vertices: [
-                Vertex(7.8, 9.10, 11.12),
-                Vertex(13.14, 15.16, 17.18),
-                Vertex(19.20, 21.22, 23.24),
-            ],
-        },
-        Triangle {
-            norm: Vertex(25.26, 27.28, 29.30),
-            vertices: [
-                Vertex(31.32, 33.34, 35.36),
-                Vertex(37.38, 39.40, 41.42),
-                Vertex(43.44, 45.46, 47.48),
-            ],
-        },
-    ])));
+    assert_eq!(parse(&bytes), Done(&[] as &[u8], Stl {
+        triangles: vec![
+            Triangle {
+                norm: Vertex(1.2, 3.4, 5.6),
+                vertices: [
+                    Vertex(7.8, 9.10, 11.12),
+                    Vertex(13.14, 15.16, 17.18),
+                    Vertex(19.20, 21.22, 23.24),
+                ],
+            },
+            Triangle {
+                norm: Vertex(25.26, 27.28, 29.30),
+                vertices: [
+                    Vertex(31.32, 33.34, 35.36),
+                    Vertex(37.38, 39.40, 41.42),
+                    Vertex(43.44, 45.46, 47.48),
+                ],
+            },
+        ],
+    }));
 }
 
 #[test]
