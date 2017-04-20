@@ -1,0 +1,11 @@
+[package]
+authors = ["Nathaniel Ringo <remexre@gmail.com>"]
+name = "stl-parser"
+version = "0.1.0"
+
+[dependencies]
+error-chain = "0.10.0"
+nom = "2.2.1"
+
+[dev-dependencies]
+byteorder = "1.0.0"
