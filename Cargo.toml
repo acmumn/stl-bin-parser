@@ -7,7 +7,7 @@ keywords = ["stl", "parser"]
 license = "MIT"
 name = "stl-bin-parser"
 repository = "https://github.com/acmumn/stl-bin-parser"
-version = "0.0.0"
+version = "0.0.1"
 
 [dependencies]
 error-chain = "0.10.0"
